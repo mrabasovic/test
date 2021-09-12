@@ -15,7 +15,7 @@ export default function DashboardScreen() {
   return (
     <div>
       <div className="row">
-        <h1>Dashboard</h1>
+        <h1>Izvestaji</h1>
       </div>
       {loading ? (
         <LoadingBox />
@@ -27,7 +27,7 @@ export default function DashboardScreen() {
             <li>
               <div className="summary-title color1">
                 <span>
-                  <i className="fa fa-users" /> Users
+                  <i className="fa fa-users" /> Korisnici
                 </span>
               </div>
               <div className="summary-body">{summary.users[0].numUsers}</div>
@@ -35,7 +35,7 @@ export default function DashboardScreen() {
             <li>
               <div className="summary-title color2">
                 <span>
-                  <i className="fa fa-shopping-cart" /> Orders
+                  <i className="fa fa-shopping-cart" /> Porudzbine
                 </span>
               </div>
               <div className="summary-body">
@@ -45,22 +45,22 @@ export default function DashboardScreen() {
             <li>
               <div className="summary-title color3">
                 <span>
-                  <i className="fa fa-money" /> Sales
+                  <i className="fa fa-money" /> Prodaja
                 </span>
               </div>
               <div className="summary-body">
-                $
+              
                 {summary.orders[0]
                   ? summary.orders[0].totalSales.toFixed(2)
-                  : 0}
+                  : 0}€
               </div>
             </li>
           </ul>
           <div>
             <div>
-              <h2>Sales</h2>
+              <h2>Prodaja</h2>
               {summary.dailyOrders.length === 0 ? (
-                <MessageBox>No Sale</MessageBox>
+                <MessageBox>Nema prodaje</MessageBox>
               ) : (
                 <Chart
                   width="100%"
@@ -76,9 +76,9 @@ export default function DashboardScreen() {
             </div>
           </div>
           <div>
-            <h2>Categories</h2>
+            <h2>Kategorije</h2>
             {summary.productCategories.length === 0 ? (
-              <MessageBox>No Category</MessageBox>
+              <MessageBox>Nema kategorija</MessageBox>
             ) : (
               <Chart
                 width="100%"

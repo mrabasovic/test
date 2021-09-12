@@ -28,7 +28,7 @@ export default function ProductScreen(props) {
 
   useEffect(() => {
     if (successReviewCreate) {
-      window.alert('Review Submitted Successfully');
+      window.alert('Ocena je uspesno obradjena.');
       setRating('');
       setComment('');
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
@@ -45,7 +45,7 @@ export default function ProductScreen(props) {
         createReview(productId, { rating, comment, name: userInfo.name })
       );
     } else {
-      alert('Please enter comment and rating');
+      alert('Unesite komentar i ocenu.');
     }
   };
   return (
@@ -56,7 +56,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
+          <Link to="/">Nazad na proizvode</Link>
           <div className="row top">
             <div className="col-2">
               <img
@@ -89,13 +89,11 @@ export default function ProductScreen(props) {
                   <li>
                     Prodavac{' '}
                     <h2>
-                      <Link to={`/seller/${product.seller._id}`}>
-                        {product.seller.seller.name}
-                      </Link>
+                      
                     </h2>
                     <Rating
-                      rating={product.seller.seller.rating}
-                      numReviews={product.seller.seller.numReviews}
+
+
                     ></Rating>
                   </li>
                   <li>

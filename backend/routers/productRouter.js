@@ -113,15 +113,15 @@ productRouter.post(
       seller: req.user._id,
       image: '/images/p1.jpg',
       price: 0,
-      category: 'sample category',
+      category: 'kategorija',
       brand: 'sample brand',
       countInStock: 0,
       rating: 0,
       numReviews: 0,
-      description: 'sample description',
+      description: 'opis',
     });
     const createdProduct = await product.save();
-    res.send({ message: 'Product Created', product: createdProduct });
+    res.send({ message: 'Proizvod kreiran', product: createdProduct });
   })
 );
 productRouter.put(
@@ -140,9 +140,9 @@ productRouter.put(
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       const updatedProduct = await product.save();
-      res.send({ message: 'Product Updated', product: updatedProduct });
+      res.send({ message: 'Proizvod azuriran', product: updatedProduct });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Proizvod nije pronadjen.' });
     }
   })
 );
@@ -155,9 +155,9 @@ productRouter.delete(
     const product = await Product.findById(req.params.id);
     if (product) {
       const deleteProduct = await product.remove();
-      res.send({ message: 'Product Deleted', product: deleteProduct });
+      res.send({ message: 'Proizvod obrisan', product: deleteProduct });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Proizvod nije pronadjen.' });
     }
   })
 );
@@ -172,7 +172,7 @@ productRouter.post(
       if (product.reviews.find((x) => x.name === req.user.name)) {
         return res
           .status(400)
-          .send({ message: 'You already submitted a review' });
+          .send({ message: 'Vec ste ocenili ovaj proizvod.' });
       }
       const review = {
         name: req.user.name,
@@ -186,11 +186,11 @@ productRouter.post(
         product.reviews.length;
       const updatedProduct = await product.save();
       res.status(201).send({
-        message: 'Review Created',
+        message: 'Ocena obradjena.',
         review: updatedProduct.reviews[updatedProduct.reviews.length - 1],
       });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Proizvod nije pronadjen.' });
     }
   })
 );

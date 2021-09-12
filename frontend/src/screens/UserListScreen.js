@@ -24,7 +24,7 @@ export default function UserListScreen(props) {
     });
   }, [dispatch, successDelete]);
   const deleteHandler = (user) => {
-    if (window.confirm('Are you sure?')) {
+    if (window.confirm('Jeste li sigurni?')) {
       dispatch(deleteUser(user._id));
     }
   };
@@ -34,7 +34,7 @@ export default function UserListScreen(props) {
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {successDelete && (
-        <MessageBox variant="success">User Deleted Successfully</MessageBox>
+        <MessageBox variant="success">Korisnik uspesno obrisan</MessageBox>
       )}
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -45,18 +45,18 @@ export default function UserListScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
+              <th>IME</th>
               <th>EMAIL</th>
               <th>IS SELLER</th>
               <th>IS ADMIN</th>
-              <th>ACTIONS</th>
+              <th>AKCIJE</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user._id}</td>
-                <td>{user.name}</td>
+                <td>Mladen</td>
                 <td>{user.email}</td>
                 <td>{user.isSeller ? 'YES' : ' NO'}</td>
                 <td>{user.isAdmin ? 'YES' : 'NO'}</td>
@@ -73,7 +73,7 @@ export default function UserListScreen(props) {
                     className="small"
                     onClick={() => deleteHandler(user)}
                   >
-                    Delete
+                    Obrisi
                   </button>
                 </td>
               </tr>

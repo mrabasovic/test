@@ -68,10 +68,10 @@ export default function MapScreen(props) {
           googleAddressId: places[0].id,
         },
       });
-      alert('location selected successfully.');
+      alert('lokacija uspesno odabrana.');
       props.history.push('/shipping');
     } else {
-      alert('Please enter your address');
+      alert('Unesite adresu');
     }
   };
 

@@ -126,7 +126,7 @@ function App() {
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/dashboard">Pocetna</Link>
+                    <Link to="/dashboard">Izvestaji</Link>
                   </li>
                   <li>
                     <Link to="/productlist">Proizvodi</Link>
@@ -256,7 +256,7 @@ function App() {
         </main>
         <footer className="row center">
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-          <div>All right reserved</div>{' '}
+          <div>SportCenter</div>{' '}
         </footer>
       </div>
     </BrowserRouter>

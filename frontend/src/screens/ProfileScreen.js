@@ -76,11 +76,11 @@ export default function ProfileScreen() {
             )}
             {successUpdate && (
               <MessageBox variant="success">
-                Profile Updated Successfully
+                Profil azuriran uspesno
               </MessageBox>
             )}
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Ime</label>
               <input
                 id="name"
                 type="text"
@@ -100,7 +100,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Sifra</label>
               <input
                 id="password"
                 type="password"
@@ -109,7 +109,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">potvrdite sifru</label>
               <input
                 id="confirmPassword"
                 type="password"
@@ -119,9 +119,9 @@ export default function ProfileScreen() {
             </div>
             {user.isSeller && (
               <>
-                <h2>Seller</h2>
+                <h2>Prodavac</h2>
                 <div>
-                  <label htmlFor="sellerName">Seller Name</label>
+                  <label htmlFor="sellerName">Ime prodavca</label>
                   <input
                     id="sellerName"
                     type="text"
@@ -131,7 +131,7 @@ export default function ProfileScreen() {
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerLogo">Seller Logo</label>
+                  <label htmlFor="sellerLogo">Logo prodavca</label>
                   <input
                     id="sellerLogo"
                     type="text"
@@ -141,7 +141,7 @@ export default function ProfileScreen() {
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerDescription">Seller Description</label>
+                  <label htmlFor="sellerDescription">Opis prodavca</label>
                   <input
                     id="sellerDescription"
                     type="text"

@@ -34,7 +34,7 @@ export default function ShippingAddressScreen(props) {
     let moveOn = true;
     if (!newLat || !newLng) {
       moveOn = window.confirm(
-        'You did not set your location on map. Continue?'
+        'Niste odabrali lokaciju. Hocete li da nastavite?'
       );
     }
     if (moveOn) {
@@ -71,10 +71,10 @@ export default function ShippingAddressScreen(props) {
       <CheckoutSteps step1 step2></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Shipping Address</h1>
+          <h1>Adresa</h1>
         </div>
         <div>
-          <label htmlFor="fullName">Full Name</label>
+          <label htmlFor="fullName">Ime i prezime</label>
           <input
             type="text"
             id="fullName"
@@ -85,7 +85,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">Adresa</label>
           <input
             type="text"
             id="address"
@@ -96,7 +96,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">Grad</label>
           <input
             type="text"
             id="city"
@@ -107,7 +107,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="postalCode">Postanski broj</label>
           <input
             type="text"
             id="postalCode"
@@ -118,7 +118,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">Drzava</label>
           <input
             type="text"
             id="country"
@@ -129,15 +129,15 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="chooseOnMap">Location</label>
+          <label htmlFor="chooseOnMap">Lokacija</label>
           <button type="button" onClick={chooseOnMap}>
-            Choose On Map
+            Odaberite na mapi
           </button>
         </div>
         <div>
           <label />
           <button className="primary" type="submit">
-            Continue
+            Nastavi
           </button>
         </div>
       </form>

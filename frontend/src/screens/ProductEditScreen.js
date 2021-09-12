@@ -100,7 +100,7 @@ export default function ProductEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Ime</label>
+              <label htmlFor="name">Naziv</label>
               <input
                 id="name"
                 type="text"

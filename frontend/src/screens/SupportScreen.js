@@ -91,7 +91,7 @@ export default function SupportScreen() {
   const submitHandler = (e) => {
     e.preventDefault();
     if (!messageBody.trim()) {
-      alert('Error. Please type message.');
+      alert('Error. Napisite poruku.');
     } else {
       allMessages = [
         ...allMessages,
@@ -114,7 +114,7 @@ export default function SupportScreen() {
     <div className="row top full-container">
       <div className="col-1 support-users">
         {users.filter((x) => x._id !== userInfo._id).length === 0 && (
-          <MessageBox>No Online User Found</MessageBox>
+          <MessageBox>Nema online korisnika</MessageBox>
         )}
         <ul>
           {users
@@ -142,11 +142,11 @@ export default function SupportScreen() {
       </div>
       <div className="col-3 support-messages">
         {!selectedUser._id ? (
-          <MessageBox>Select a user to start chat</MessageBox>
+          <MessageBox>Odaberite korisnika za cet</MessageBox>
         ) : (
           <div>
             <div className="row">
-              <strong>Chat with {selectedUser.name} </strong>
+              <strong>Cetujete sa {selectedUser.name} </strong>
             </div>
             <ul ref={uiMessagesRef}>
               {messages.length === 0 && <li>No message.</li>}
@@ -162,9 +162,9 @@ export default function SupportScreen() {
                   value={messageBody}
                   onChange={(e) => setMessageBody(e.target.value)}
                   type="text"
-                  placeholder="type message"
+                  placeholder="napisite poruku"
                 />
-                <button type="submit">Send</button>
+                <button type="submit">Posalji</button>
               </form>
             </div>
           </div>
