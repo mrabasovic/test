@@ -70,9 +70,9 @@ export default function ProductListScreen(props) {
   return (
     <div>
       <div className="row">
-        <h1>Products</h1>
+        <h1>Proizvodi</h1>
         <button type="button" className="primary" onClick={createHandler}>
-          Napravi proizvod
+          Dodaj proizvod
         </button>
       </div>
 

@@ -21,7 +21,7 @@ export default function PaymentMethodScreen(props) {
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Payment Method</h1>
+          <h1>Nacin placanja</h1>
         </div>
         <div>
           <div>
@@ -34,7 +34,7 @@ export default function PaymentMethodScreen(props) {
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            <label htmlFor="paypal">PayPal</label>
+            <label htmlFor="paypal">Karticom</label>
           </div>
         </div>
         <div>
@@ -47,13 +47,13 @@ export default function PaymentMethodScreen(props) {
               required
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            <label htmlFor="stripe">Stripe</label>
+            <label htmlFor="stripe">Pouzecem</label>
           </div>
         </div>
         <div>
           <label />
           <button className="primary" type="submit">
-            Continue
+            Nastavi
           </button>
         </div>
       </form>
