@@ -27,7 +27,7 @@ body {
 }
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color: black;
 }
 main {
   grid-area: main;
@@ -35,7 +35,7 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #203040;
+  background-color: black;
   color: #ffffff;
 }
 /* Common */
@@ -85,7 +85,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: greenyellow;
 }
 button.block {
   width: 100%;
@@ -104,8 +104,8 @@ a.brand {
   font-weight: bold;
 }
 .badge {
-  background-color: #f02020;
-  color: #ffffff;
+  background-color: greenyellow;
+  color: black;
   border-radius: 50%;
   padding: 0.2rem 0.7rem;
   font-size: 1.4rem;

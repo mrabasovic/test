@@ -23,11 +23,11 @@ export default function OrderHistoryScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATE</th>
+              <th>DATUM</th>
               <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>PLACENO</th>
+              <th>DOSTAVLJENO</th>
+              <th>AKCIJE</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +50,7 @@ export default function OrderHistoryScreen(props) {
                       props.history.push(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                    Detalji
                   </button>
                 </td>
               </tr>
