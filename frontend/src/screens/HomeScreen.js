@@ -20,7 +20,7 @@ export default function HomeScreen() {
     error: errorSellers,
     users: sellers,
   } = userTopSellersList;
-
+  // ovo pozivamo samo jednom. samo jednom poziva da uzme proizvode
   useEffect(() => {
     dispatch(listProducts({}));
     dispatch(listTopSellers());

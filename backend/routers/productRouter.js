@@ -83,7 +83,7 @@ productRouter.get(
     } else {
       res
         .status(500)
-        .send({ message: 'No seller found. first run /api/users/seed' });
+        .send({ message: 'Nije pronadjen prodavac. prvo pokrenite /api/users/seed' });
     }
   })
 );
@@ -98,7 +98,7 @@ productRouter.get(
     if (product) {
       res.send(product);
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Proizvod nije pronadjen' });
     }
   })
 );

@@ -104,7 +104,7 @@ export default function OrderScreen(props) {
               <div className="card card-body">
                 <h2>Placanje</h2>
                 <p>
-                  <strong>Metod:</strong> {order.paymentMethod}
+                  <strong>Nacin placanja:</strong> {order.paymentMethod}
                 </p>
                 {order.isPaid ? (
                   <MessageBox variant="success">
@@ -191,10 +191,11 @@ export default function OrderScreen(props) {
                       )}
                       {loadingPay && <LoadingBox></LoadingBox>}
 
-                      <PayPalButton
-                        amount={order.totalPrice}
-                        onSuccess={successPaymentHandler}
-                      ></PayPalButton>
+                      
+                      <button onClick={successPaymentHandler} >Nastavi 
+                        
+
+                        </button>
                     </>
                   )}
                 </li>
