@@ -106,6 +106,7 @@ export default function OrderScreen(props) {
                 <p>
                   <strong>Nacin placanja:</strong> {order.paymentMethod}
                 </p>
+                
                 {order.isPaid ? (
                   <MessageBox variant="success">
                     Placeno {order.paidAt}
@@ -165,10 +166,7 @@ export default function OrderScreen(props) {
                 </div>
               </li>
               <li>
-                <div className="row">
-                  <div>Porez</div>
-                  <div>{order.taxPrice.toFixed(2)}€</div>
-                </div>
+                
               </li>
               <li>
                 <div className="row">
@@ -180,7 +178,7 @@ export default function OrderScreen(props) {
                   </div>
                 </div>
               </li>
-              {!order.isPaid && (
+              {order.paymentMethod == "Karticom" && !order.isPaid && (
                 <li>
                   {!sdkReady ? (
                     <LoadingBox></LoadingBox>
@@ -192,7 +190,10 @@ export default function OrderScreen(props) {
                       {loadingPay && <LoadingBox></LoadingBox>}
 
                       
-                      <button onClick={successPaymentHandler} >Nastavi 
+                      <button type="button"
+
+                        className="primary block"
+                        onClick={successPaymentHandler} >Plati 
                         
 
                         </button>
