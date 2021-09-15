@@ -25,15 +25,15 @@ export default function ShippingAddressScreen(props) {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    const newLat = addressMap ? addressMap.lat : lat;
+    const newLat = addressMap ? addressMap.lat : lat; // ako postoji addressMap koristi to, ako ne postoji uzmi trenutnu lat i long
     const newLng = addressMap ? addressMap.lng : lng;
     if (addressMap) {
       setLat(addressMap.lat);
       setLng(addressMap.lng);
     }
     let moveOn = true;
-    if (!newLat || !newLng) {
-      moveOn = window.confirm(
+    if (!newLat || !newLng) { // ako ne postoje nove lat i long prikazi mu poruku
+      moveOn = window.confirm(  // na osnovu odgovora setujemo moveOn
         'Niste odabrali lokaciju. Hocete li da nastavite?'
       );
     }
@@ -49,7 +49,7 @@ export default function ShippingAddressScreen(props) {
           lng: newLng,
         })
       );
-      props.history.push('/payment');
+      props.history.push('/payment'); // ako je moveOn true idi na payment ekran
     }
   };
   const chooseOnMap = () => {
@@ -78,7 +78,7 @@ export default function ShippingAddressScreen(props) {
           <input
             type="text"
             id="fullName"
-            placeholder="Enter full name"
+            placeholder="Unesite ime i prezime"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
@@ -89,7 +89,7 @@ export default function ShippingAddressScreen(props) {
           <input
             type="text"
             id="address"
-            placeholder="Enter address"
+            placeholder="Unesite adresu"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
@@ -100,7 +100,7 @@ export default function ShippingAddressScreen(props) {
           <input
             type="text"
             id="city"
-            placeholder="Enter city"
+            placeholder="Unesite grad"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             required
@@ -111,7 +111,7 @@ export default function ShippingAddressScreen(props) {
           <input
             type="text"
             id="postalCode"
-            placeholder="Enter postal code"
+            placeholder="Unesite postanski broj"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
             required
@@ -122,7 +122,7 @@ export default function ShippingAddressScreen(props) {
           <input
             type="text"
             id="country"
-            placeholder="Enter country"
+            placeholder="Unesite drzavu"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
             required

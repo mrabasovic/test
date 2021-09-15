@@ -24,9 +24,7 @@ app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
-app.get('/api/config/paypal', (req, res) => {
-  res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
-});
+
 app.get('/api/config/google', (req, res) => {
   res.send(process.env.GOOGLE_API_KEY || '');
 });
@@ -37,7 +35,7 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 );
 // app.get('/', (req, res) => {
-//   res.send('Server is ready');
+//   res.send('Server je spreman');
 // });
 
 app.use((err, req, res, next) => {

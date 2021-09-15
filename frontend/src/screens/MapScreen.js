@@ -15,15 +15,15 @@ const defaultLocation = { lat: 45.516, lng: -73.56 };
 
 export default function MapScreen(props) {
   const [googleApiKey, setGoogleApiKey] = useState('');
-  const [center, setCenter] = useState(defaultLocation);
-  const [location, setLocation] = useState(center);
+  const [center, setCenter] = useState(defaultLocation);  // center je za mapu
+  const [location, setLocation] = useState(center); // location je za marker
 
   const mapRef = useRef(null);
   const placeRef = useRef(null);
   const markerRef = useRef(null);
 
   useEffect(() => {
-    const fetch = async () => {
+    const fetch = async () => { // fetch je async fja u kojoj saljemo zahtev na backend
       const { data } = await Axios('/api/config/google');
       setGoogleApiKey(data);
       getUserCurrentLocation();
@@ -32,7 +32,7 @@ export default function MapScreen(props) {
   }, []);
 
   const onLoad = (map) => {
-    mapRef.current = map;
+    mapRef.current = map; // samo setujemo mapRed na mapu. ovo se poziva dole kod GoogleMap taga
   };
 
   const onMarkerLoad = (marker) => {
@@ -52,7 +52,7 @@ export default function MapScreen(props) {
     setCenter({ lat: place.lat(), lng: place.lng() });
     setLocation({ lat: place.lat(), lng: place.lng() });
   };
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // useDispatch je iz reduxa. taj dispatch smo koristili izpod na 60 liniji 
   const onConfirm = () => {
     const places = placeRef.current.getPlaces();
     if (places && places.length === 1) {
@@ -69,7 +69,7 @@ export default function MapScreen(props) {
         },
       });
       alert('lokacija uspesno odabrana.');
-      props.history.push('/shipping');
+      props.history.push('/shipping');  // nakon uspesnog odabira idemo na shipping screen
     } else {
       alert('Unesite adresu');
     }
@@ -77,7 +77,7 @@ export default function MapScreen(props) {
 
   const getUserCurrentLocation = () => {
     if (!navigator.geolocation) {
-      alert('Geolocation os not supported by this browser');
+      alert('Geolokacija nije podrzana od strane ovog pretrazivaca.');
     } else {
       navigator.geolocation.getCurrentPosition((position) => {
         setCenter({
@@ -92,7 +92,7 @@ export default function MapScreen(props) {
     }
   };
 
-  return googleApiKey ? (
+  return googleApiKey ? ( // u slucaju da postoji apiKey renderuj mapu, ako ne, onda prikazi onaj loading box
     <div className="full-container">
       <LoadScript libraries={libs} googleMapsApiKey={googleApiKey}>
         <GoogleMap
@@ -108,9 +108,9 @@ export default function MapScreen(props) {
             onPlacesChanged={onPlacesChanged}
           >
             <div className="map-input-box">
-              <input type="text" placeholder="Enter your address"></input>
+              <input type="text" placeholder="Unesite adresu "></input>
               <button type="button" className="primary" onClick={onConfirm}>
-                Confirm
+                Potvrdi
               </button>
             </div>
           </StandaloneSearchBox>

@@ -35,21 +35,21 @@ export default function SigninScreen(props) {
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="Unesite email"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Sifra</label>
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="Unesite sifru"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
@@ -63,9 +63,9 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <div>
-            New customer?{' '}
+            Novi kupac?{' '}
             <Link to={`/register?redirect=${redirect}`}>
-              Create your account
+              Kreirajte nalog
             </Link>
           </div>
         </div>

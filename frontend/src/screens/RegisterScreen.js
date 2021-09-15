@@ -22,7 +22,7 @@ export default function RegisterScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert('Password and confirm password are not match');
+      alert('Sifre moraju da se slazu.');
     } else {
       dispatch(register(name, email, password));
     }
@@ -41,41 +41,41 @@ export default function RegisterScreen(props) {
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Ime</label>
           <input
             type="text"
             id="name"
-            placeholder="Enter name"
+            placeholder="Unesite ime"
             required
             onChange={(e) => setName(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Email adresa</label>
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="Unesite email"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Sifra</label>
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="Unesite sifru"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">Potrvdite sifru</label>
           <input
             type="password"
             id="confirmPassword"
-            placeholder="Enter confirm password"
+            placeholder="Unesite sifru ponovo"
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
@@ -83,13 +83,13 @@ export default function RegisterScreen(props) {
         <div>
           <label />
           <button className="primary" type="submit">
-            Register
+            Registruj se
           </button>
         </div>
         <div>
           <label />
           <div>
-            Already have an account?{' '}
+            Vec imate nalog?{' '}
             <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
           </div>
         </div>
